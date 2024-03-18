@@ -86,6 +86,10 @@ namespace MenuProject.Repos
             {
                 Insert(student);
             }
+            else
+            {
+                Student? studentToUpdate = _students.FirstOrDefault(s => s.Id == student.Id);
+            }
         }
     }
 }
