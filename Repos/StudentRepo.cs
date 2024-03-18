@@ -80,5 +80,12 @@ namespace MenuProject.Repos
         {
             _students.Remove(student);
         }
+        public void Update(Student student)
+        {
+            if (!student.HasId)
+            {
+                Insert(student);
+            }
+        }
     }
 }
