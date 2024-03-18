@@ -76,6 +76,9 @@ namespace MenuProject.Repos
         {
             _students.Add(student);
         }
-
+        public void Delete(Student student)
+        {
+            _students.Remove(student);
+        }
     }
 }
