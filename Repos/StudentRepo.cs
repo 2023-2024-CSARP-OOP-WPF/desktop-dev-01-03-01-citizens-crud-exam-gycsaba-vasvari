@@ -71,6 +71,11 @@ namespace MenuProject.Repos
         public List<Student> FindAll()
         {
             return _students;
-        }        
+        }
+        public void Insert(Student student)
+        {
+            _students.Add(student);
+        }
+
     }
 }
