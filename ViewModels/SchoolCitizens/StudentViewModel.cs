@@ -24,6 +24,12 @@ namespace MenuProject.ViewModels.SchoolCitizens
         public StudentViewModel()
         {
             _selectedStudent = new Student();
-        }      
+            UpdateView();
+        }
+        private void UpdateView()
+        {
+            EducationLevels = new ObservableCollection<string>(_educationLevelsRepo.FindAll());
+            Students = new ObservableCollection<Student>(_studentRepo.FindAll());
+        }
     }
 }
