@@ -26,6 +26,19 @@ namespace MenuProject.ViewModels.SchoolCitizens
             _selectedStudent = new Student();
             UpdateView();
         }
+
+        [RelayCommand]
+        void DoNewStudent()
+        {
+            SelectedStudent = new Student();
+        }
+
+        [RelayCommand]
+        public void DoRemove(Student studentToDelete)
+        {
+            _studentRepo.Delete(studentToDelete);
+            UpdateView();
+        }
         private void UpdateView()
         {
             EducationLevels = new ObservableCollection<string>(_educationLevelsRepo.FindAll());
