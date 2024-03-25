@@ -78,10 +78,11 @@ namespace MenuProject.Repos
         }
         public void Save(Student student)
         {
-            if (!student.HasId)
-                Insert(student);
-            else
+            if (student.HasId)
                 Update(student);
+            else
+                Insert(student);
+
         }
 
         private void Insert(Student student)
