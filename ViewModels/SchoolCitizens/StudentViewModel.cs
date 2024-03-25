@@ -39,6 +39,16 @@ namespace MenuProject.ViewModels.SchoolCitizens
             _studentRepo.Delete(studentToDelete);
             UpdateView();
         }
+
+        [RelayCommand]
+        public void DoSave(Student studentToSave)
+        {
+            if (studentToSave.HasId)
+                _studentRepo.Update(studentToSave);
+            else
+                _studentRepo.Insert(studentToSave);
+            UpdateView();
+        }
         private void UpdateView()
         {
             EducationLevels = new ObservableCollection<string>(_educationLevelsRepo.FindAll());
