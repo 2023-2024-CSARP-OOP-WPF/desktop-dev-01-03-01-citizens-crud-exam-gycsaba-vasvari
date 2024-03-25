@@ -43,10 +43,7 @@ namespace MenuProject.ViewModels.SchoolCitizens
         [RelayCommand]
         public void DoSave(Student studentToSave)
         {
-            if (studentToSave.HasId)
-                _studentRepo.Update(studentToSave);
-            else
-                _studentRepo.Insert(studentToSave);
+            _studentRepo.Update(studentToSave);
             UpdateView();
         }
         private void UpdateView()
