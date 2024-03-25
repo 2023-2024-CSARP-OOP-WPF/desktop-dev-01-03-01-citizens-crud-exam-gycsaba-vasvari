@@ -82,7 +82,6 @@ namespace MenuProject.Repos
                 Update(student);
             else
                 Insert(student);
-
         }
 
         private void Insert(Student student)
