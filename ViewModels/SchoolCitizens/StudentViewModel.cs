@@ -43,7 +43,7 @@ namespace MenuProject.ViewModels.SchoolCitizens
         [RelayCommand]
         public void DoSave(Student studentToSave)
         {
-            _studentRepo.Update(studentToSave);
+            _studentRepo.Save(studentToSave);
             UpdateView();
         }
         private void UpdateView()
